@@ -1,0 +1,19 @@
+namespace App\Http\Controllers;
+
+use App\Repositories\FooRepository;
+
+class BarController
+{
+    // Inject `FooRepository` from the IoC
+    public function baz(FooRepository $repository)
+    {
+        // Find entity by primary key
+        $repository->find(1);
+
+        // Find all entities
+        $repository->findAll();
+
+        // Create a new entity
+        $repository->create(['name' => 'Example']);
+    }
+}
